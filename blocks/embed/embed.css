@@ -1,8 +1,14 @@
+
 .embed {
-  width: unset;
-  text-align: center;
-  max-width: 800px;
-  margin: 32px auto;
+  background: #fff;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: left;
+  border: none;
+  outline: none;
 }
 
 .embed > div {
@@ -59,4 +65,37 @@
   border-left: 6px solid;
   top: 4px;
   left: 7px;
+}
+
+.embed > div {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.embed > div > div {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.embed > div > div > p {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-align: left;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
