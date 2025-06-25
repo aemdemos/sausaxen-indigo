@@ -1,0 +1,17 @@
+{
+  "originUrl": "https://www.goindigo.in",
+  "urls": [
+    {
+      "url": "https://www.goindigo.in/get-inspired/travel-wanderlust.html",
+      "source": "MANUAL",
+      "targetPath": "/get-inspired/travel-wanderlust",
+      "id": "85d633fc59b82dab8cb1e6b0331d3014331c3c9d"
+    }
+  ],
+  "crawlOptions": {
+    "strategy": "manual",
+    "strategiesAttempted": [
+      "MANUAL"
+    ]
+  }
+}
