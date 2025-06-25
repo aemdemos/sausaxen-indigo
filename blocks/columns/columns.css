@@ -258,13 +258,14 @@
   }
 }
 
+/* ----- MERGED .columns.columns9 SELECTOR BELOW ----- */
 .columns.columns9 {
   background: #fff;
   width: 100%;
   margin: 0 auto;
   padding: 0;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  display: block;
+  box-sizing: border-box;
 }
 
 /* Restore main row layout: nav columns left, utility column right */
@@ -273,13 +274,12 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 48px;
+  gap: 96px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 32px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   min-height: 1px;
 }
 
@@ -287,16 +287,17 @@
 .columns.columns9 > div > div:first-child {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   gap: 36px;
   flex: 3 1 0;
-  align-items: flex-start;
   min-width: 0;
+  box-sizing: border-box;
 }
 
 /* Each navigation column */
 .columns.columns9 > div > div:first-child > div {
-  min-width: 160px;
-  max-width: 220px;
+  min-width: 120px;
+  max-width: 200px;
   flex: 1 1 0;
 }
 
@@ -304,24 +305,94 @@
 .columns.columns9 > div > div:last-child {
   min-width: 190px;
   max-width: 230px;
-  flex: 0 0 220px;
+  flex: 0 0 190px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  box-sizing: border-box;
+  margin-top: 0;
   gap: 0;
-  padding-top: 0;
-  margin-top: 8px;
+  padding: 0;
+  justify-content: flex-start;
   min-height: 1px;
 }
 
-/* Remove vertical collapse for all groups in the right column */
-.columns.columns9 > div > div:last-child > * {
+/* Allow all images (badges, WhatsApp, awards) to show in right column */
+.columns.columns9 > div > div:last-child ul img,
+.columns.columns9 > div > div:last-child ul picture img {
+  display: block;
+  max-width: 120px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+/* WhatsApp: slightly larger and prominent if present */
+.columns.columns9 #social + ul img[alt="Whatsapp"] {
+  max-width: 220px;
   margin-bottom: 16px;
-  min-height: 1px;
+  margin-top: 4px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgb(0 185 174 / 9%);
 }
 
-.columns.columns9 > div > div:last-child > *:last-child {
+/* Awards: stack tight, make more visible */
+.columns.columns9 #our-awards + ul img {
+  max-width: 120px;
+  margin-bottom: 8px;
+}
+
+.columns.columns9 #our-awards + ul li:last-child img {
   margin-bottom: 0;
+}
+
+/* App/Store badges: stack tight, no extra device images */
+.columns.columns9 #download + ul img {
+  max-width: 120px;
+  margin-bottom: 8px;
+  margin-top: 0;
+  border-radius: 5px;
+}
+
+.columns.columns9 #download + ul li {
+  margin-bottom: 4px;
+}
+
+.columns.columns9 #download + ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Hide only device mockup images (usually large images with width/height > 300) */
+.columns.columns9 > div > div:last-child ul img[width="514"],
+.columns.columns9 > div > div:last-child ul img[height="718"],
+.columns.columns9 > div > div:last-child ul img[width="801"],
+.columns.columns9 > div > div:last-child ul img[width="800"],
+.columns.columns9 > div > div:last-child ul img[height="201"],
+.columns.columns9 > div > div:last-child ul img[height="200"] {
+  display: none;
+}
+
+/* Social icon row: horizontal, left-aligned */
+.columns.columns9 #social + p {
+  margin: 0 0 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.columns.columns9 #social + p a {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  text-indent: -9999px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
 }
 
 /* Headings in nav and right columns */
@@ -336,16 +407,17 @@
   line-height: 1.2;
 }
 
-/* Utility headings (smaller than nav headings) */
-.columns.columns9 > div > div:last-child h6 {
-  font-size: 18px;
-  margin: 18px 0 8px;
-  font-weight: bold;
+/* Utility headings (smaller than nav headings) and right column typography/spacing */
+.columns.columns9 > div > div:last-child > h6,
+.columns.columns9 > div > div:last-child > p {
+  font-size: 17px;
+  font-weight: 700;
   color: #111;
+  margin-bottom: 6px;
+  margin-top: 0;
   line-height: 1.2;
 }
 
-/* Remove top margin from first heading in right column */
 .columns.columns9 > div > div:last-child > h6:first-of-type {
   margin-top: 0;
 }
@@ -353,7 +425,7 @@
 /* Remove default list styling and space */
 .columns.columns9 ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 8px;
   padding: 0;
 }
 
@@ -370,12 +442,12 @@
 .columns.columns9 li a,
 .columns.columns9 ul a,
 .columns.columns9 a {
-  color: #222;
+  color: #111;
   font-size: 16px;
   font-family: inherit;
   font-weight: 400;
   text-decoration: none;
-  line-height: 1.6;
+  line-height: 1.5;
   display: inline-block;
   transition: color 0.16s;
 }
@@ -390,80 +462,18 @@
   text-decoration: underline;
 }
 
-/* Social icon row if present as inline links */
-.columns.columns9 #social + p {
-  margin: 0 0 8px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Social icon style (if image backgrounds are used in anchors) */
-.columns.columns9 #social + p a {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
-  border-radius: 50%;
-  text-indent: -9999px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0;
-}
-
-/* Download/app store/awards/WhatsApp images compact and left-aligned */
-.columns.columns9 #social + ul img,
-.columns.columns9 #download + ul img,
-.columns.columns9 #our-awards + ul img {
-  display: block;
-  margin-bottom: 8px;
-  max-width: 130px;
-  height: auto;
-  border-radius: 4px;
-  box-sizing: border-box;
-  object-fit: contain;
-}
-
-.columns.columns9 #our-awards + ul img {
-  max-width: 70px;
-}
-
-.columns.columns9 #download + ul img {
-  max-width: 110px;
-}
-
-/* Remove extra bottom margin from last image in each block */
-.columns.columns9 #social + ul li:last-child img,
-.columns.columns9 #download + ul li:last-child img,
-.columns.columns9 #our-awards + ul li:last-child img {
-  margin-bottom: 0;
-}
-
-/* Tighten awards/download list spacing */
-.columns.columns9 #download + ul li,
-.columns.columns9 #our-awards + ul li {
-  margin-bottom: 4px;
-}
-
-.columns.columns9 #download + ul li:last-child,
-.columns.columns9 #our-awards + ul li:last-child {
-  margin-bottom: 0;
-}
-
-/* Responsive: stack columns on narrow screens */
+/* Responsive stacking for mobile */
 @media (width <= 900px) {
   .columns.columns9 > div {
     flex-direction: column;
-    gap: 20px;
-    padding-left: 8px;
-    padding-right: 8px;
+    gap: 18px;
+    padding: 0 8px;
     max-width: 100vw;
   }
 
   .columns.columns9 > div > div:first-child {
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
   }
 
   .columns.columns9 > div > div:last-child {
@@ -472,100 +482,28 @@
     flex: 1 1 0;
     margin-top: 0;
   }
+
+  .columns.columns9 #social + p {
+    gap: 16px;
+  }
 }
 
-
-.columns.columns7 {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.columns.columns7 > div {
+/* Copyright bar if present */
+.columns.columns9 .footer-copyright-bar {
+  border-top: 2px solid #00bcd4;
+  padding: 16px 0;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 34px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.columns.columns7 > div > div {
-  flex: 1 1 0;
-  min-width: 215px;
-  max-width: 250px;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.columns.columns7 ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.columns.columns7 li {
-  margin-bottom: 5px;
-  padding-left: 0;
-  text-align: left;
-}
-
-.columns.columns7 li:last-child {
-  margin-bottom: 0;
-}
-
-.columns.columns7 li a,
-.columns.columns7 ul a,
-.columns.columns7 a {
-  color: #888;
-  font-size: 17px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-weight: 400;
-  line-height: 1.65;
-  text-decoration: none;
-  display: inline;
-  transition: color 0.18s;
-  letter-spacing: 0;
-}
-
-.columns.columns7 a:hover,
-.columns.columns7 a:focus {
-  color: #888;
-  text-decoration: none;
-}
-
-@media (width <= 900px) {
-  .columns.columns7 {
-    max-width: 100vw;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .columns.columns7 > div {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .columns.columns7 > div > div {
-    min-width: 0;
-    max-width: 100%;
-  }
-}
-
-/* Generated CSS .columns.columns8 block */
-.columns.columns8 {
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
   background: #fff;
-  border-bottom: 2px solid #00bcd4;
-  padding: 56px 80px 36px;
-  margin: 0;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
-@media (width <= 900px) {
-  .columns.columns8 {
-    padding: 32px 12px 18px;
-  }
+.columns.columns9 .footer-copyright-bar img {
+  height: 16px;
+  margin-right: 8px;
 }
+
