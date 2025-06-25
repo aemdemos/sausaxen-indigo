@@ -1,9 +1,9 @@
 
+
 .cards {
-  width: 100%;
-  background: transparent;
   overflow-x: auto;
   padding: 0;
+  background: transparent;
   box-sizing: border-box;
 }
 
@@ -106,3 +106,100 @@
   line-height: 1.3;
   letter-spacing: 0.01em;
 }
+
+.cards {
+  overflow-x: auto;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Horizontal flex layout for card row */
+.cards > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow-x: auto;
+  align-items: stretch;
+}
+
+/* Hide card images */
+.cards .cards-card-image {
+  display: none;
+}
+
+/* Card appearance and layout */
+.cards > ul > li {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 420px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 36px 0 32px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+/* Use flex row to group text and arrow tightly */
+.cards .cards-card-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 10px; /* space between text and arrow */
+}
+
+/* Card text: bold, centered, single line, truncation if needed */
+.cards .cards-card-body p {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.01em;
+  width: auto;
+  max-width: 100%;
+  flex: 0 1 auto;
+  display: block;
+}
+
+/* Add the arrow as a flex child via ::after on the .cards-card-body, so it's always grouped with the text */
+.cards .cards-card-body::after {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px 18px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l6 5-6 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  content: "";
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* Remove max-width restrictions on strong, ensure strong doesn't break group */
+.cards .cards-card-body strong {
+  max-width: 100%;
+  font-weight: 700;
+}
+
