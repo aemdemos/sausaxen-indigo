@@ -1,3 +1,4 @@
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -44,4 +45,95 @@
   .hero {
     padding: 40px 32px;
   }
+}
+
+/* --- Generated CSS block (except .hero.hero2) --- */
+
+.hero.hero2 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  background: none;
+}
+
+/* Ensure both main div children share the row (flex is required by constraint) */
+.hero.hero2 > div {
+  flex: 1 1 0;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure image container fills its flex area */
+.hero.hero2 > div:first-child > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Make the picture/img fill and crop as a full hero image */
+.hero.hero2 picture,
+.hero.hero2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hero.hero2 img {
+  object-fit: cover;
+  object-position: center;
+  max-width: none;
+  max-height: none;
+}
+
+/* Let the (empty) second column collapse if desired */
+.hero.hero2 > div:last-child {
+  flex: 0 0 0px;
+  width: 0;
+  min-width: 0;
+  max-width: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* --- Merged .hero.hero2 block --- */
+.hero.hero2 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  background: none;
 }
