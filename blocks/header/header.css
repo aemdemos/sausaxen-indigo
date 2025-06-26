@@ -1,3 +1,4 @@
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -265,4 +266,79 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* --- Generated CSS --- */
+
+.header.block[data-block-status="loaded"] {
+  background-color: #003580;
+  min-height: 48px;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header-wrapper .nav-wrapper {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #003580;
+}
+
+header {
+  display: flex;
+}
+
+.header.block[data-block-status="loaded"] > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  gap: 24px;
+}
+
+.header.block[data-block-status="loaded"] img {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header.block[data-block-status="loaded"] a, 
+.header.block[data-block-status="loaded"] a:any-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 4px;
+  transition: text-decoration 0.2s;
+}
+
+.header.block[data-block-status="loaded"] a:hover, 
+.header.block[data-block-status="loaded"] a:focus {
+  text-decoration: underline;
+}
+
+.header.block[data-block-status="loaded"] .nav-hamburger {
+  display: none;
+  visibility: hidden;
+}
+
+.header.block[data-block-status="loaded"], 
+.header.block[data-block-status="loaded"] * {
+  color: #fff;
+  fill: #fff;
+  box-sizing: border-box;
+}
+
+/* --- Merged .header selector --- */
+.header {
+  display: flex;
 }
