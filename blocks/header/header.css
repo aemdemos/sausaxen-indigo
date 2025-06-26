@@ -1,3 +1,5 @@
+
+
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -266,3 +268,164 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
+/* --- Generated CSS --- */
+
+.header.block[data-block-status="loaded"] {
+  background-color: #003580;
+  min-height: 48px;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header-wrapper .nav-wrapper {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: #003580;
+}
+
+header {
+  display: flex;
+}
+
+.header.block[data-block-status="loaded"] > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+  gap: 24px;
+}
+
+.header.block[data-block-status="loaded"] img {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header.block[data-block-status="loaded"] a, 
+.header.block[data-block-status="loaded"] a:any-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 4px;
+  transition: text-decoration 0.2s;
+}
+
+.header.block[data-block-status="loaded"] a:hover, 
+.header.block[data-block-status="loaded"] a:focus {
+  text-decoration: underline;
+}
+
+.header.block[data-block-status="loaded"] .nav-hamburger {
+  display: none;
+  visibility: hidden;
+}
+
+.header.block[data-block-status="loaded"], 
+.header.block[data-block-status="loaded"] * {
+  color: #fff;
+  fill: #fff;
+  box-sizing: border-box;
+}
+
+/* --- Merged .header selector --- */
+.header {
+  background-color: #003580;
+  width: 100%;
+  min-height: 67px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  padding: 0;
+}
+
+.header.block[data-block-status="loaded"] {
+  width: 100%;
+  max-width: 1264px;
+  min-height: 67px;
+  height: 67px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 32px;
+  gap: 0;
+}
+
+.header.block[data-block-status="loaded"] > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  gap: 0;
+}
+
+/* Ensure header images scale/distort correctly */
+.header img {
+  height: 32px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Navigation and tool links horizontal alignment */
+.header ul, .header ol {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.header li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.header a, .header button {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: text-decoration 0.2s;
+}
+
+.header a:hover, .header a:focus, .header button:hover, .header button:focus {
+  text-decoration: underline;
+}
+
+.header .nav-hamburger {
+  display: none;
+  visibility: hidden;
+}
+
+.header,
+.header * {
+  color: #fff;
+  fill: #fff;
+  box-sizing: border-box;
+}
+
