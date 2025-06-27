@@ -1,112 +1,4 @@
-
-
-.cards {
-  overflow-x: auto;
-  padding: 0;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
-}
-
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
-.cards .cards-card-body {
-  margin: 16px;
-}
-
-.cards .cards-card-image {
-  line-height: 0;
-}
-
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.cards > ul {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  overflow: auto hidden;
-  align-items: stretch;
-  min-width: 900px;
-}
-
-.cards > ul > li {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  min-width: 220px;
-  max-width: 260px;
-  height: 64px;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-left: 24px;
-  padding-right: 48px;
-  cursor: pointer;
-  transition: box-shadow 0.2s, border-color 0.2s;
-  flex-shrink: 0;
-  background-repeat: no-repeat;
-  background-position: right 18px center;
-  background-size: 18px 18px;
-  background-image: url('data:image/svg+xml;utf8,<svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l6 5-6 5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-}
-
-.cards > ul > li:hover {
-  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
-  border-color: #bdbdbd;
-}
-
-.cards .cards-card-image {
-  display: none;
-}
-
-.cards .cards-card-body {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
-
-.cards .cards-card-body p {
-  width: 100%;
-  max-width: calc(100% - 32px);
-  font-family: 'Open Sans', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #212121;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.3;
-  letter-spacing: 0.01em;
-}
-
+/* Cards container */
 .cards {
   overflow-x: auto;
   padding: 0;
@@ -126,11 +18,6 @@
   align-items: stretch;
 }
 
-/* Hide card images */
-.cards .cards-card-image {
-  display: none;
-}
-
 /* Card appearance and layout */
 .cards > ul > li {
   background: #fff;
@@ -148,6 +35,23 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: border-color 0.2s;
+}
+
+.cards > ul > li:hover {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+  border-color: #bdbdbd;
+}
+
+.cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Hide card images */
+.cards .cards-card-image {
+  display: none;
+  line-height: 0;
 }
 
 /* Use flex row to group text and arrow tightly */

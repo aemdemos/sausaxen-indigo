@@ -1,5 +1,3 @@
-
-
 /* header and nav layout */
 header .nav-wrapper {
   background-color: var(--background-color);
@@ -284,7 +282,7 @@ header {
   display: flex;
 }
 
-/* --- Merged .header selector --- */
+/* Base header styles - consolidated and ordered by specificity */
 .header {
   background-color: white;
   width: 100%;
@@ -296,6 +294,59 @@ header {
   justify-content: center;
   padding: 0;
   border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  fill: #333;
+}
+
+.header * {
+  color: #333;
+  fill: #333;
+  box-sizing: border-box;
+}
+
+.header img {
+  height: 32px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
+.header ul, .header ol {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.header li {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.header a, .header button {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header a:hover, .header a:focus, .header button:hover, .header button:focus {
+  color: #003580;
+}
+
+.header .nav-hamburger {
+  display: none;
+  visibility: hidden;
 }
 
 .header.block[data-block-status="loaded"] {
@@ -376,63 +427,5 @@ header {
   color: #333;
   fill: #333;
   box-sizing: border-box;
-}
-
-/* Base header styles - ordered by specificity */
-.header {
-  color: #333;
-  fill: #333;
-  box-sizing: border-box;
-}
-
-.header * {
-  color: #333;
-  fill: #333;
-  box-sizing: border-box;
-}
-
-.header img {
-  height: 32px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  display: block;
-}
-
-.header ul, .header ol {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  align-items: center;
-}
-
-.header li {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
-.header a, .header button {
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  background: transparent;
-  border: none;
-  padding: 0 4px;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.header a:hover, .header a:focus, .header button:hover, .header button:focus {
-  color: #003580;
-}
-
-.header .nav-hamburger {
-  display: none;
-  visibility: hidden;
 }
 
