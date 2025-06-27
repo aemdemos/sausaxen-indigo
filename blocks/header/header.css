@@ -271,38 +271,77 @@ header nav .nav-tools {
 
 /* --- Generated CSS --- */
 
-.header.block[data-block-status="loaded"] {
-  background-color: #003580;
-  min-height: 48px;
-  height: 48px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 .header-wrapper .nav-wrapper {
   position: fixed;
   z-index: 2;
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: #003580;
+  background: transparent;
 }
 
 header {
   display: flex;
 }
 
+/* --- Merged .header selector --- */
+.header {
+  background-color: white;
+  width: 100%;
+  min-height: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  padding: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header.block[data-block-status="loaded"] {
+  background-color: white;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 24px;
+  gap: 0;
+}
+
 .header.block[data-block-status="loaded"] > * {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #fff;
-  gap: 24px;
+  color: #333;
+  gap: 0;
+}
+
+.header.block[data-block-status="loaded"] > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  gap: 0;
+}
+
+.header.block[data-block-status="loaded"] > div:first-child {
+  flex: 0 0 auto;
+}
+
+.header.block[data-block-status="loaded"] > div:nth-child(2) {
+  flex: 1 1 auto;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.header.block[data-block-status="loaded"] > div:last-child {
+  flex: 0 0 auto;
 }
 
 .header.block[data-block-status="loaded"] img {
@@ -314,9 +353,9 @@ header {
 
 .header.block[data-block-status="loaded"] a, 
 .header.block[data-block-status="loaded"] a:any-link {
-  color: #fff;
+  color: #333;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   padding: 0 4px;
   transition: text-decoration 0.2s;
@@ -334,48 +373,24 @@ header {
 
 .header.block[data-block-status="loaded"], 
 .header.block[data-block-status="loaded"] * {
-  color: #fff;
-  fill: #fff;
+  color: #333;
+  fill: #333;
   box-sizing: border-box;
 }
 
-/* --- Merged .header selector --- */
+/* Base header styles - ordered by specificity */
 .header {
-  background-color: #003580;
-  width: 100%;
-  min-height: 67px;
-  height: 67px;
-  display: flex;
-  align-items: center;
+  color: #333;
+  fill: #333;
   box-sizing: border-box;
-  justify-content: center;
-  padding: 0;
 }
 
-.header.block[data-block-status="loaded"] {
-  width: 100%;
-  max-width: 1264px;
-  min-height: 67px;
-  height: 67px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+.header * {
+  color: #333;
+  fill: #333;
   box-sizing: border-box;
-  padding: 0 32px;
-  gap: 0;
 }
 
-.header.block[data-block-status="loaded"] > div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  min-width: 0;
-  gap: 0;
-}
-
-/* Ensure header images scale/distort correctly */
 .header img {
   height: 32px;
   width: auto;
@@ -384,11 +399,10 @@ header {
   display: block;
 }
 
-/* Navigation and tool links horizontal alignment */
 .header ul, .header ol {
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 40px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -402,30 +416,23 @@ header {
 }
 
 .header a, .header button {
-  color: #fff;
-  font-size: 16px;
+  color: #333;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   background: transparent;
   border: none;
-  padding: 0 8px;
+  padding: 0 4px;
   cursor: pointer;
-  transition: text-decoration 0.2s;
+  transition: color 0.2s;
 }
 
 .header a:hover, .header a:focus, .header button:hover, .header button:focus {
-  text-decoration: underline;
+  color: #003580;
 }
 
 .header .nav-hamburger {
   display: none;
   visibility: hidden;
-}
-
-.header,
-.header * {
-  color: #fff;
-  fill: #fff;
-  box-sizing: border-box;
 }
 
