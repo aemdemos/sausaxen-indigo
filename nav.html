@@ -5,13 +5,16 @@
     <title>Navigation</title>
 </head>
 <body>
+    <!-- Brand section (becomes nav-brand) -->
     <div>
-        <div>
-            <a href="/">
-                <img src="/icons/indigo-logo.svg" alt="IndiGo" />
-            </a>
-        </div>
-        <div>
+        <a href="/">
+            <img src="/icons/indigo-logo.svg" alt="IndiGo" />
+        </a>
+    </div>
+    
+    <!-- Main navigation sections (becomes nav-sections) -->
+    <div>
+        <div class="default-content-wrapper">
             <ul>
                 <li><a href="/web-checkin">Checkin</a></li>
                 <li><a href="/manage">Manage</a>
@@ -74,30 +77,32 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <ul>
-                <li><a href="/login">Login</a>
-                    <ul>
-                        <li><a href="/customer-login">Customer Login</a></li>
-                        <li><a href="/partner-login">Partner Login</a></li>
-                        <li><a href="/corp-connect-login">Corp Connect Login</a></li>
-                    </ul>
-                </li>
-                <li><a href="/profile">View Profile</a>
-                    <ul>
-                        <li><a href="/indigo-cash">IndiGo Cash</a></li>
-                        <li><a href="/my-bookings">My Bookings</a></li>
-                        <li><a href="/account-settings">My Account & Settings</a></li>
-                    </ul>
-                </li>
-                <li><a href="/download-app">Download App</a></li>
-                <li><a href="/investor-relations">Investor Relations</a></li>
-                <li><a href="/weather-advisory">Weather advisory</a></li>
-                <li><a href="/careers">Careers</a></li>
-                <li><a href="/advertise">Advertise with us</a></li>
-                <li><a href="/contact-us">Contact Us</a></li>
-            </ul>
-        </div>
+    </div>
+    
+    <!-- Tools section (becomes nav-tools) -->
+    <div>
+        <ul>
+            <li><a href="/login">Login</a>
+                <ul>
+                    <li><a href="/customer-login">Customer Login</a></li>
+                    <li><a href="/partner-login">Partner Login</a></li>
+                    <li><a href="/corp-connect-login">Corp Connect Login</a></li>
+                </ul>
+            </li>
+            <li><a href="/profile">View Profile</a>
+                <ul>
+                    <li><a href="/indigo-cash">IndiGo Cash</a></li>
+                    <li><a href="/my-bookings">My Bookings</a></li>
+                    <li><a href="/account-settings">My Account & Settings</a></li>
+                </ul>
+            </li>
+            <li><a href="/download-app">Download App</a></li>
+            <li><a href="/investor-relations">Investor Relations</a></li>
+            <li><a href="/weather-advisory">Weather advisory</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/advertise">Advertise with us</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
+        </ul>
     </div>
 </body>
 </html> 
