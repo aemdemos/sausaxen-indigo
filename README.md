@@ -4,8 +4,8 @@ This is a project created by AEMY.
 
 ## Environments
 
-- Preview: https://main--sausaxen-indigo--aemdemos.aem.page/
-- Live: https://main--sausaxen-indigo--aemdemos.aem.live/
+- Preview: https://main--sausaxen-indigo--aemdemos.aem.page/get-inspired/travel-wanderlust
+- Live: https://main--sausaxen-indigo--aemdemos.aem.live/get-inspired/travel-wanderlust
 
 ## Installation
 
