@@ -8,7 +8,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  background: white;
 }
 
 header {
@@ -62,7 +62,7 @@ header {
 
 .header a, .header button {
   color: #333;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   text-decoration: none;
   background: transparent;
@@ -74,6 +74,7 @@ header {
 
 .header a:hover, .header a:focus, .header button:hover, .header button:focus {
   color: #003580;
+  cursor: pointer;
 }
 
 .header .nav-hamburger {
@@ -84,7 +85,6 @@ header {
 .header.block[data-block-status="loaded"] {
   background-color: white;
   width: 100%;
-  max-width: 1200px;
   min-height: 60px;
   height: 60px;
   margin: 0 auto;
@@ -93,7 +93,7 @@ header {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 0 0;
   gap: 0;
 }
 
@@ -114,11 +114,14 @@ header {
 }
 
 .header.block[data-block-status="loaded"] > div:first-child {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header.block[data-block-status="loaded"] > div:nth-child(2) {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   justify-content: center;
   margin-left: 40px;
 }
@@ -138,15 +141,17 @@ header {
 .header.block[data-block-status="loaded"] a:any-link {
   color: #333;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
   padding: 0 4px;
-  transition: text-decoration 0.2s;
+  transition: color 0.2s;
+  cursor: pointer;
 }
 
 .header.block[data-block-status="loaded"] a:hover, 
 .header.block[data-block-status="loaded"] a:focus {
-  text-decoration: underline;
+  color: #003580;
+  cursor: pointer;
 }
 
 .header.block[data-block-status="loaded"] .nav-hamburger {
@@ -164,7 +169,7 @@ header {
 /* --- Header and nav layout (higher specificity) --- */
 
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: white;
   width: 100%;
   z-index: 2;
   position: fixed;
@@ -175,11 +180,12 @@ header nav {
   display: grid;
   grid-template:
     'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+    'sections sections sections' 1fr / auto 2fr auto;
   align-items: center;
   gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
   height: var(--nav-height);
   padding: 0 24px;
   font-family: var(--body-font-family);
@@ -199,8 +205,23 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
+    width: 100%;
     padding: 0 32px;
+  }
+
+  header nav .nav-brand {
+    flex: 2 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header nav .nav-sections {
+    flex: 0 0 auto;
+  }
+
+  header nav .nav-tools {
+    flex: 0 0 auto;
   }
 
   header nav[aria-expanded='true'] {
@@ -216,6 +237,7 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  cursor: pointer;
 }
 
 /* hamburger */
@@ -306,6 +328,9 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header nav .nav-brand img {
@@ -316,9 +341,10 @@ header nav .nav-brand img {
 /* sections */
 header nav .nav-sections {
   grid-area: sections;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   display: none;
   visibility: hidden;
+  justify-content: center;
 }
 
 header nav[aria-expanded='true'] .nav-sections {
@@ -330,7 +356,7 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 17px;
 }
 
 header nav .nav-sections ul > li {
@@ -345,11 +371,37 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
+/* Add dropdown arrows for Book and Trips */
+header nav .nav-sections ul > li:first-child > a::after,
+header nav .nav-sections ul > li:nth-child(2) > a::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentcolor;
+  vertical-align: middle;
+}
+
+/* Ensure proper cursor for navigation links */
+header nav .nav-sections ul > li > a {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+header nav .nav-sections ul > li > a:hover {
+  color: #003580;
+  cursor: pointer;
+}
+
 @media (width >= 900px) {
   header nav .nav-sections {
-    display: block;
+    display: flex;
     visibility: visible;
     white-space: nowrap;
+    justify-content: center;
   }
 
   header nav[aria-expanded='true'] .nav-sections {
@@ -386,6 +438,8 @@ header nav .nav-sections ul > li > ul > li {
     display: flex;
     gap: 24px;
     margin: 0;
+    font-size: 17px;
+    justify-content: center;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -429,5 +483,17 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+
+/* Ensure tools section links have proper cursor */
+header nav .nav-tools a {
+  cursor: pointer;
+  font-size: 17px;
+  transition: color 0.2s;
+}
+
+header nav .nav-tools a:hover {
+  color: #003580;
+  cursor: pointer;
 }
 
